@@ -1,0 +1,63 @@
+{
+	"name": "codeanywhere-fs",
+	"displayName": "Codeanywhere FS",
+	"description": "Codeanywhere FS Intergration",
+	"version": "0.0.1",
+	"publisher": "codeanywhere",
+	"enableProposedApi": true,
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onView:cafs-file-explorer",
+		"onLanguage:json",
+		"onLanguage:jsonc"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": [
+			{
+				"title": "Codeanywhere",
+				"properties": {
+					"cafs.token": {
+						"type": "string",
+						"default": "dfd2f8af38cefa8b911e7e7d07e1e4c7f0e90ba2a89f7ed2"
+					},
+					"cafs.projectId": {
+						"type": "string",
+						"default": "45622"
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/mkdirp": "^0.5.2",
+		"@types/node": "*",
+		"@types/request": "^2.48.1",
+		"@types/request-promise-native": "^1.0.15",
+		"@types/rimraf": "^2.0.2",
+		"tslint": "^5.11.0",
+		"typescript": "^2.1.4",
+		"vscode": "^1.1.22"
+	},
+	"dependencies": {
+		"axios": "^0.18.0",
+		"ftp": "^0.3.10",
+		"jsonc-parser": "^0.4.2",
+		"mkdirp": "^0.5.1",
+		"request": "^2.88.0",
+		"request-promise-native": "^1.0.7",
+		"rimraf": "^2.6.2",
+		"streamifier": "^0.1.1"
+	}
+}
